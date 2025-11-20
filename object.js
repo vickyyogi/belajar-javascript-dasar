@@ -76,7 +76,7 @@ function laptopSpecs(pross,vga,ram,storage,os){
     this.storage = storage;
     this.os = os;
     this.getInfo = function(){
-        return `${this.pross} dengan ${this.vga} sudah mampu menjalankan game terkini`;
+        return `Prosessor : ${this.pross} dengan VGA : ${this.vga} dan RAM : ${this.ram}sudah mampu menjalankan game terkini`;
     };
 }
 
