@@ -68,7 +68,6 @@ function barang(nama,harga,stok) {
 //console.log(`${data2.nama} dengan Harga Rp. ${data2.harga} persediaan digudang sebanyak ${data2.stok} bungkus.`);
 
 //object costructor mneggunakan "this"
-
 function laptopSpecs(pross,vga,ram,storage,os){
     this.pross = pross;
     this.vga = vga;
@@ -76,11 +75,18 @@ function laptopSpecs(pross,vga,ram,storage,os){
     this.storage = storage;
     this.os = os;
     this.getInfo = function(){
-        return `Prosessor : ${this.pross} dengan VGA : ${this.vga} dan RAM : ${this.ram}sudah mampu menjalankan game terkini`;
+        return `Prosessor : ${this.pross} dengan VGA : ${this.vga} dan RAM : ${this.ram} sudah mampu menjalankan game terkini`;
     };
 }
 
 const laptopAndi = new laptopSpecs("AMD RYZEN 7 5680U","RADEON RDNA 3","16 GB","1 TB","WINDOWS 11 PRO");
 const laptopJohn = new laptopSpecs("INTEL CORE i5 1245","NVIDIA RTX 3050","16 GB","1 TB","WINDOWS 11 PRO");
+
+//console.log(laptopJohn.getInfo());
+
+//menambahkan method dengan mekanisme Prototype(rantai pewarisan)
+laptopSpecs.prototype.getPrice = function(){
+    return `Laptop dengan spesifikasi Prosessor : ${this.pross} , VGA : ${this.vga} akan berada di harga sekitar 8 jt - 12 jt `;
+}
 console.log(laptopAndi.getInfo());
-console.log(laptopJohn.getInfo());
+console.log(laptopAndi.getPrice());
